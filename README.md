@@ -20,7 +20,7 @@ public void desligar() {
 
 }
 
-public boolean acelerar(int aceleracao) {   
+public boolean acelerar (int aceleracao) {   
 	if(ligado = true) {
 		this.veloatual+=aceleracao;
 	}
