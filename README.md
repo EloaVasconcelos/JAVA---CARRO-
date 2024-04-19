@@ -142,3 +142,107 @@ public class Principal {
 	
 }
 
+## public class Carro {
+	public String marca;
+	public String modelo;
+	public int veloatual;
+	public double velomax;
+	public boolean ligado;
+	public boolean desligado;
+
+	public void ligar() {
+		this.ligado = true;
+	}
+
+	public void desligar() {
+		this.desligado = false;
+	}
+
+
+
+	public boolean acelerar (int aceleracao) {
+		if (ligado == true) {
+			if ((veloatual + aceleracao) <= velomax) { 
+				this.veloatual += aceleracao; 
+				return true;
+
+			} else {
+				return false; 
+			}
+					
+		}
+		
+	
+		
+		return false;
+		
+	}
+
+	 public boolean frear(int frear) {
+		    if ((veloatual - frear) > 0 ) {
+		        this.veloatual -= frear; 
+		            return true;
+			    
+		        } 
+		    else {
+		            this.veloatual = 0;    
+		            return false;
+		        }
+		    }
+}
+
+
+
+
+public class Testes {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Carro cc1 = new Carro();
+
+
+		
+		cc1.marca = "Toyota";
+		cc1.modelo = "corolla";
+		cc1.veloatual = 20;
+		cc1.velomax = 200;
+	
+				
+		
+	
+		System.out.println("Teste 1");
+		
+		//Teste de ligar
+	    
+	    System.out.println("O carro está ligado." + cc1.ligado);
+		
+		System.out.println("Teste 2");
+		
+		//Teste de ligar
+	   
+		System.out.println("O carro está desligado." + cc1.desligado);
+		
+		//tesdte acelerar
+		System.out.println("Teste 3");
+		
+		
+	  
+		
+	    cc1.acelerar(20);
+		System.out.println("O carro acelerou, sua velocidade atual é de: " + cc1.veloatual);
+		
+	
+		 cc1.acelerar(190);
+		System.out.println("Não foi possível acelerar, sua velocidade vai ultrapassar a velocidade permitida: " + cc1.velomax);
+		
+	    cc1.frear(5);
+		System.out.println("O carro freou, sua velocidade atual é de: " + cc1.veloatual);
+		
+	    cc1.frear(100);
+		System.out.println("O carro freou, sua velocidade atual é de: " + cc1.veloatual);
+		
+		cc1.frear(5);
+		System.out.println("Não foi possível frear, sua velocidade atual é de : " + cc1.veloatual); 
+	}
+
+}
